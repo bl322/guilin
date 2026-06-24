@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>桂林 4 天 3 晚旅行规划</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f5f7;
+      --bg-soft: #fbfbfd;
+      --card: rgba(255, 255, 255, 0.72);
+      --card-strong: rgba(255, 255, 255, 0.88);
+      --stroke: rgba(15, 23, 42, 0.08);
+      --stroke-strong: rgba(15, 23, 42, 0.14);
+      --text: #101828;
+      --muted: #667085;
+      --muted-strong: #344054;
+      --blue: #0071e3;
+      --blue-deep: #0057b8;
+      --mint: #c7f0df;
+      --aqua: #b8e2ff;
+      --gold: #ffe1a3;
+      --shadow-lg: 0 32px 90px rgba(15, 23, 42, 0.12);
+      --shadow-md: 0 18px 48px rgba(15, 23, 42, 0.08);
+      --shadow-sm: 0 10px 28px rgba(15, 23, 42, 0.06);
+      --radius-xxl: 36px;
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1280px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 14% 14%, rgba(184, 226, 255, 0.65), transparent 24%),
+        radial-gradient(circle at 88% 12%, rgba(199, 240, 223, 0.8), transparent 26%),
+        radial-gradient(circle at 50% 100%, rgba(255, 225, 163, 0.28), transparent 36%),
+        linear-gradient(180deg, #f7f8fb 0%, #f4f5f8 48%, #f5f5f7 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 28%),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.28), transparent 65%);
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.48) 68%, transparent);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .page {
+      width: min(calc(100% - 24px), var(--max-width));
+      margin: 0 auto;
+      padding: 18px 0 72px;
+    }
+
+    .glass {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 880px;
+      padding: 28px;
+      border-radius: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-lg);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.5)),
+        linear-gradient(135deg, rgba(184, 226, 255, 0.3), rgba(199, 240, 223, 0.22) 38%, rgba(255, 225, 163, 0.18) 100%);
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: auto -8% -20% 46%;
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 113, 227, 0.14), rgba(255, 255, 255, 0) 66%);
+      filter: blur(12px);
+      z-index: -1;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: -120px;
+      top: -120px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0) 70%);
+      z-index: -1;
+    }
+
+    .hero-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.94rem;
+      color: var(--muted-strong);
+      letter-spacing: 0.03em;
+    }
+
+    .brand-mark {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), #6fd3ff);
+      box-shadow: 0 0 0 8px rgba(0, 113, 227, 0.1);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted-strong);
+      font-size: 0.92rem;
+      background: rgba(255, 255, 255, 0.58);
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.42fr) minmax(220px, 0.58fr);
+      gap: 12px;
+      margin-top: 22px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-panel {
+      border-radius: 34px;
+      padding: 34px;
+    }
+
+    .hero-copy {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.56)),
+        linear-gradient(180deg, rgba(184, 226, 255, 0.18), rgba(255, 255, 255, 0));
+      border: 1px solid rgba(255, 255, 255, 0.84);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      inset: auto auto -90px -90px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(199, 240, 223, 0.72), rgba(199, 240, 223, 0) 74%);
+      pointer-events: none;
+    }
+
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      inset: 22px 22px auto auto;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(184, 226, 255, 0.42), rgba(184, 226, 255, 0) 72%);
+      pointer-events: none;
+      filter: blur(8px);
+    }
+
+    .hero-layout {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 20px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      font-size: 0.92rem;
+      color: var(--muted-strong);
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), #6fd3ff);
+    }
+
+    .hero-title {
+      margin: 38px 0 0;
+      display: grid;
+      gap: 10px;
+      position: relative;
+      z-index: 1;
+      transform: translateX(4px);
+    }
+
+    .hero-title strong,
+    .hero-title span {
+      display: block;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.065em;
+      color: #101828;
+      text-wrap: balance;
+    }
+
+    .hero-title strong {
+      font-size: clamp(3.4rem, 6.1vw, 5.5rem);
+    }
+
+    .hero-title span {
+      font-size: clamp(2.15rem, 4.2vw, 3.75rem);
+      color: rgba(16, 24, 40, 0.9);
+      transform: translateX(72px);
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: none;
+      font-size: inherit;
+      line-height: inherit;
+      letter-spacing: inherit;
+      font-weight: inherit;
+    }
+
+    .hero p {
+      margin: 12px 0 0;
+      max-width: 470px;
+      font-size: 1.02rem;
+      line-height: 1.74;
+      color: var(--muted);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .stat {
+      padding: 18px 18px 20px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.55rem;
+      letter-spacing: -0.03em;
+    }
+
+    .stat span {
+      display: block;
+      color: var(--muted);
+      line-height: 1.62;
+      font-size: 0.94rem;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 10px;
+      align-content: start;
+      padding-top: 92px;
+      opacity: 0.54;
+    }
+
+    .hero-subline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      position: relative;
+      z-index: 1;
+      max-width: 420px;
+    }
+
+    .hero-subline span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      color: var(--muted-strong);
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-copy-foot {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+      padding-top: 40px;
+    }
+
+    .hero-note {
+      max-width: 280px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.72;
+      text-align: left;
+    }
+
+    .hero-panel {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.58)),
+        linear-gradient(135deg, rgba(199, 240, 223, 0.14), rgba(184, 226, 255, 0.06));
+      border: 1px solid rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-md);
+      padding: 22px 22px 20px;
+      opacity: 0.7;
+    }
+
+    .hero-panel h2,
+    .section-head h2 {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-panel p,
+    .hero-panel li,
+    .section-head p,
+    .card p,
+    .card li,
+    .timeline-card p,
+    .timeline-card li,
+    .food-card p,
+    .food-card li,
+    .section-note {
+      color: var(--muted);
+      line-height: 1.82;
+    }
+
+    .mini-list,
+    .bullet-list,
+    .food-list,
+    .check-list,
+    .pitfall-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .mini-list li,
+    .bullet-list li,
+    .food-list li,
+    .check-list li,
+    .pitfall-list li {
+      margin-bottom: 9px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 0;
+    }
+
+    .hero-copy-top {
+      max-width: 620px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: white;
+      font-size: 0.96rem;
+      border: none;
+      box-shadow: 0 10px 30px rgba(0, 113, 227, 0.24);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      background: var(--blue-deep);
+      box-shadow: 0 16px 36px rgba(0, 113, 227, 0.28);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--muted-strong);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-glow {
+      position: absolute;
+      inset: auto 60px 52px auto;
+      width: 280px;
+      height: 120px;
+      border-radius: 120px;
+      background: linear-gradient(90deg, rgba(0, 113, 227, 0.16), rgba(111, 211, 255, 0.08));
+      filter: blur(40px);
+      pointer-events: none;
+    }
+
+    .section {
+      margin-top: 22px;
+      padding: 28px;
+      border-radius: var(--radius-xxl);
+      background: rgba(255, 255, 255, 0.64);
+      border: 1px solid rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(28px) saturate(180%);
+      -webkit-backdrop-filter: blur(28px) saturate(180%);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .grid-2,
+    .grid-3,
+    .grid-food,
+    .grid-tools {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .grid-food {
+      grid-template-columns: 1.12fr 0.88fr;
+    }
+
+    .grid-tools {
+      grid-template-columns: 0.92fr 1.08fr;
+    }
+
+    .route-toggle {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 12px 0 18px;
+    }
+
+    .toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--muted-strong);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .toggle-btn:hover {
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.92);
+    }
+
+    .toggle-btn.is-active {
+      background: var(--blue);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 12px 28px rgba(0, 113, 227, 0.24);
+    }
+
+    .card,
+    .food-card,
+    .timeline-card,
+    .map-card,
+    .map-side,
+    .tool-card {
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      background: var(--card-strong);
+      border: 1px solid rgba(255, 255, 255, 0.86);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .card h3,
+    .food-card h3,
+    .timeline-card h3,
+    .map-card h3,
+    .map-side h3,
+    .tool-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.18rem;
+      letter-spacing: -0.02em;
+    }
+
+    .map-shell {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      min-height: 640px;
+      background:
+        radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.18) 38%, transparent 55%),
+        radial-gradient(circle at 78% 84%, rgba(199, 240, 223, 0.36), rgba(199, 240, 223, 0) 26%),
+        linear-gradient(180deg, rgba(232, 247, 255, 0.92), rgba(245, 248, 252, 0.94));
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88);
+      touch-action: none;
+      cursor: grab;
+      user-select: none;
+    }
+
+    .map-shell.is-dragging {
+      cursor: grabbing;
+    }
+
+    .map-toolbar {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 3;
+      display: flex;
+      gap: 8px;
+    }
+
+    .map-btn {
+      display: inline-grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.88);
+      color: var(--muted-strong);
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .map-btn:hover {
+      background: white;
+      transform: translateY(-1px);
+    }
+
+    .map-hint {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 3;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: var(--muted-strong);
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .map-viewport {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .map-canvas {
+      position: absolute;
+      inset: 0;
+      transform-origin: 50% 50%;
+      transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform;
+    }
+
+    .map-canvas.no-transition {
+      transition: none;
+    }
+
+    .map-canvas svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-terrain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.92;
+    }
+
+    .terrain-blob {
+      position: absolute;
+      border-radius: 48% 52% 46% 54% / 54% 46% 54% 46%;
+      background: linear-gradient(180deg, rgba(167, 214, 193, 0.48), rgba(167, 214, 193, 0.12));
+      filter: blur(2px);
+    }
+
+    .terrain-blob.one {
+      left: 70px;
+      top: 110px;
+      width: 180px;
+      height: 110px;
+    }
+
+    .terrain-blob.two {
+      left: 300px;
+      top: 90px;
+      width: 240px;
+      height: 120px;
+    }
+
+    .terrain-blob.three {
+      right: 110px;
+      top: 160px;
+      width: 190px;
+      height: 130px;
+    }
+
+    .terrain-blob.four {
+      right: 170px;
+      bottom: 110px;
+      width: 220px;
+      height: 140px;
+    }
+
+    .terrain-blob.five {
+      left: 360px;
+      bottom: 76px;
+      width: 180px;
+      height: 112px;
+    }
+
+    .terrain-river {
+      position: absolute;
+      left: 134px;
+      top: 164px;
+      width: 688px;
+      height: 124px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, rgba(120, 196, 255, 0.26), rgba(120, 196, 255, 0.08));
+      filter: blur(10px);
+      transform: rotate(12deg);
+    }
+
+    .map-region {
+      position: absolute;
+      width: auto;
+      max-width: 140px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      cursor: pointer;
+    }
+
+    .map-region:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.14);
+    }
+
+    .map-region.is-active {
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.16);
+    }
+
+    .map-region strong {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0;
+      font-size: 0.92rem;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .map-region strong::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 5px rgba(0, 113, 227, 0.12);
+    }
+
+    .region-guilin {
+      left: 58px;
+      top: 78px;
+    }
+
+    .region-mopan {
+      left: 220px;
+      top: 226px;
+    }
+
+    .region-lijiang {
+      left: 426px;
+      top: 88px;
+    }
+
+    .region-yangshuo {
+      right: 46px;
+      top: 318px;
+    }
+
+    .region-yulong {
+      right: 124px;
+      bottom: 74px;
+    }
+
+    .region-xingping {
+      left: 396px;
+      bottom: 52px;
+    }
+
+    .map-region.city strong::before {
+      background: #ff9b54;
+      box-shadow: 0 0 0 5px rgba(255, 155, 84, 0.14);
+    }
+
+    .map-region.river strong::before {
+      background: #0071e3;
+      box-shadow: 0 0 0 5px rgba(0, 113, 227, 0.14);
+    }
+
+    .map-region.green strong::before {
+      background: #42b983;
+      box-shadow: 0 0 0 5px rgba(66, 185, 131, 0.14);
+    }
+
+    .map-region.return strong::before {
+      background: #8266ff;
+      box-shadow: 0 0 0 5px rgba(130, 102, 255, 0.14);
+    }
+
+    .legend-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .map-detail {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .map-detail h4 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+      letter-spacing: -0.01em;
+    }
+
+    .map-detail p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.76;
+      font-size: 0.94rem;
+    }
+
+    .route-line {
+      transition: opacity 220ms ease, stroke-width 220ms ease, filter 220ms ease;
+    }
+
+    .route-line.is-dimmed {
+      opacity: 0.18;
+      filter: none;
+    }
+
+    .route-line.is-active {
+      opacity: 1;
+      stroke-width: 20;
+    }
+
+    .route-line.secondary-active {
+      opacity: 1;
+      stroke-width: 14;
+    }
+
+    .legend-item {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .legend-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      margin-top: 4px;
+    }
+
+    .legend-dot.city {
+      background: linear-gradient(135deg, #ffbd66, #ff8f4a);
+    }
+
+    .legend-dot.river {
+      background: linear-gradient(135deg, #8bd3ff, #0071e3);
+    }
+
+    .legend-dot.green {
+      background: linear-gradient(135deg, #9ee6c6, #42b983);
+    }
+
+    .legend-dot.return {
+      background: linear-gradient(135deg, #c7b5ff, #8266ff);
+    }
+
+    .legend-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.98rem;
+    }
+
+    .legend-item p {
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.72;
+      color: var(--muted);
+    }
+
+    .section-note {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(0, 113, 227, 0.05);
+    }
+
+    .timeline-wrap {
+      display: grid;
+      gap: 18px;
+    }
+
+    .plan-mini {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .plan-mini .card {
+      padding: 20px;
+    }
+
+    .timeline-card {
+      padding: 26px;
+    }
+
+    .timeline-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 18px;
+      margin-bottom: 20px;
+    }
+
+    .day-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--muted-strong);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+    }
+
+    .day-badge b {
+      display: inline-grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), #6fd3ff);
+      color: white;
+      letter-spacing: normal;
+      font-size: 0.98rem;
+      box-shadow: 0 10px 24px rgba(0, 113, 227, 0.22);
+    }
+
+    .timeline-head h3 {
+      margin: 0 0 8px;
+      font-size: 1.56rem;
+      letter-spacing: -0.03em;
+    }
+
+    .timeline-tag {
+      flex-shrink: 0;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(0, 113, 227, 0.08);
+      color: var(--blue-deep);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 14px;
+      padding-left: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(0, 113, 227, 0.75), rgba(0, 113, 227, 0.08));
+    }
+
+    .slot {
+      position: relative;
+      padding: 18px 18px 18px 24px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .slot::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      top: 23px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 6px rgba(0, 113, 227, 0.12);
+    }
+
+    .slot-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .time {
+      color: var(--blue-deep);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .slot h4 {
+      margin: 0;
+      font-size: 1.06rem;
+      letter-spacing: -0.01em;
+    }
+
+    .slot p {
+      margin: 0;
+    }
+
+    .slot ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+    }
+
+    .slot li {
+      margin-bottom: 8px;
+    }
+
+    .food-hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.56)),
+        linear-gradient(145deg, rgba(255, 225, 163, 0.28), rgba(184, 226, 255, 0.16));
+    }
+
+    .food-hero::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -56px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 225, 163, 0.82), rgba(255, 225, 163, 0) 72%);
+      pointer-events: none;
+    }
+
+    .food-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .food-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--muted-strong);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .food-card {
+      padding: 24px;
+    }
+
+    .food-card small {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0, 113, 227, 0.08);
+      color: var(--blue-deep);
+      font-size: 0.82rem;
+    }
+
+    .tool-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .tool-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.84);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tool-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.98rem;
+    }
+
+    .tool-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.72;
+      font-size: 0.94rem;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(0, 113, 227, 0.06);
+      color: var(--muted-strong);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 1180px) {
+      .hero-grid,
+      .grid-food,
+      .grid-tools,
+      .grid-3,
+      .grid-2,
+      .plan-mini {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats,
+      .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .map-region {
+        max-width: 128px;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        width: min(calc(100% - 16px), var(--max-width));
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 28px;
+      }
+
+      .hero-copy,
+      .hero-panel,
+      .section,
+      .card,
+      .food-card,
+      .timeline-card,
+      .map-card,
+      .map-side,
+      .tool-card {
+        padding: 20px;
+        border-radius: 24px;
+      }
+
+      .hero-nav,
+      .timeline-head,
+      .section-head,
+      .slot-top {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .hero-title strong {
+        font-size: 3.1rem;
+      }
+
+      .hero-title span {
+        font-size: 2.55rem;
+        transform: translateX(22px);
+      }
+
+      .hero-title {
+        transform: translateX(0);
+      }
+
+      .nav-links {
+        justify-content: flex-start;
+      }
+
+      .hero-stats,
+      .food-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .map-shell {
+        min-height: 520px;
+      }
+
+      .hero-copy {
+        min-height: auto;
+      }
+
+      .hero-copy-foot {
+        flex-direction: column;
+        align-items: start;
+        padding-top: 28px;
+      }
+
+      .hero-note {
+        text-align: left;
+        max-width: none;
+      }
+
+      .hero-side {
+        padding-top: 0;
+        opacity: 1;
+      }
+
+      .map-region {
+        max-width: 116px;
+        padding: 7px 10px;
+      }
+
+      .region-guilin {
+        left: 18px;
+        top: 84px;
+      }
+
+      .region-mopan {
+        left: 126px;
+        top: 204px;
+      }
+
+      .region-lijiang {
+        left: 234px;
+        top: 92px;
+      }
+
+      .region-yangshuo {
+        right: 16px;
+        top: 286px;
+      }
+
+      .region-yulong {
+        right: 24px;
+        bottom: 58px;
+      }
+
+      .region-xingping {
+        left: 214px;
+        bottom: 40px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-title strong {
+        font-size: 2.58rem;
+      }
+
+      .hero-title span {
+        font-size: 2.08rem;
+        transform: translateX(0);
+      }
+
+      .hero p,
+      .section-head p {
+        font-size: 0.98rem;
+      }
+
+      .brand {
+        font-size: 0.86rem;
+      }
+
+      .nav-links a {
+        font-size: 0.88rem;
+      }
+
+      .map-shell {
+        min-height: 460px;
+      }
+
+      .map-hint {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        text-align: center;
+        border-radius: 16px;
+      }
+
+      .timeline {
+        padding-left: 16px;
+      }
+
+      .slot::before {
+        left: -16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-nav glass">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          GUILIN SUMMER GUIDE
+        </div>
+        <nav class="nav-links">
+          <a href="#overview">总览</a>
+          <a href="#map">地图</a>
+          <a href="#days">日程</a>
+          <a href="#food">美食</a>
+          <a href="#tools">实用信息</a>
+        </nav>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy glass">
+          <div class="hero-layout">
+            <div class="hero-copy-top">
+              <span class="hero-kicker">7.24 - 7.27 · 桂林 / 阳朔</span>
+              <h1 class="hero-title">
+                <strong>桂林山水</strong>
+                <span>四日慢游</span>
+              </h1>
+              <p>桂林市区开场，漓江顺流入阳朔，遇龙河和十里画廊作为高潮，最后用兴坪或古桥轻松收尾。</p>
+
+              <div class="hero-subline">
+                <span>桂林市区</span>
+                <span>漓江游船</span>
+                <span>阳朔田园</span>
+                <span>兴坪收尾</span>
+              </div>
+            </div>
+
+            <div class="hero-copy-foot">
+              <div class="hero-actions">
+                <a class="button" href="#map">查看路线地图</a>
+                <a class="button secondary" href="#food">先看吃什么</a>
+              </div>
+              <div class="hero-note">晚出门，避正午，顺着山水的节奏走。</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <aside class="hero-panel glass">
+            <h2>节奏</h2>
+            <ul class="mini-list">
+              <li>正午 12:30 - 16:00 尽量安排在室内、船舱、溶洞或酒店午休。</li>
+              <li>傍晚留给象鼻山与十里画廊，清晨留给遇龙河。</li>
+              <li>Day 1 住桂林，Day 2-3 住阳朔。</li>
+            </ul>
+          </aside>
+
+          <aside class="hero-panel glass">
+            <h2>亮点</h2>
+            <ul class="mini-list">
+              <li>漓江游船。</li>
+              <li>遇龙河竹筏。</li>
+              <li>兴坪或古桥收尾。</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+
+      <div class="hero-glow" aria-hidden="true"></div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-head">
+        <div>
+          <h2>总览</h2>
+          <p>这是一条很适合第一次去桂林、又不想被高温和赶路破坏体验的路线。你会先看城市，再上江面，再深入阳朔田园，最后用兴坪或古桥收尾。</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Day 1</h3>
+          <p>桂林市区轻松开场。米粉、东西巷、逍遥楼、象鼻山、两江四湖，把城市名片一次收齐。</p>
+        </article>
+        <article class="card">
+          <h3>Day 2</h3>
+          <p>中午后登船，从磨盘山顺流去阳朔。漓江的大面风景变成当天的主剧情。</p>
+        </article>
+        <article class="card">
+          <h3>Day 3 - Day 4</h3>
+          <p>遇龙河、银子岩、十里画廊组成高潮，最后按返程时间选兴坪或更安静的小众桥景。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="map">
+      <div class="section-head">
+        <div>
+          <h2>路线地图</h2>
+          <p>先看路线，再看分区。拖拽和缩放可以更直观地理解桂林、漓江、阳朔、遇龙河和兴坪之间的位置关系。</p>
+        </div>
+      </div>
+
+      <div class="grid-tools">
+        <div class="map-card">
+          <h3>桂林四日游路线</h3>
+          <div class="route-toggle" id="routeToggle">
+            <button class="toggle-btn is-active" type="button" data-route="all">全程</button>
+            <button class="toggle-btn" type="button" data-route="day1">Day 1</button>
+            <button class="toggle-btn" type="button" data-route="day2">Day 2</button>
+            <button class="toggle-btn" type="button" data-route="day3">Day 3</button>
+            <button class="toggle-btn" type="button" data-route="day4">Day 4</button>
+          </div>
+          <div class="map-shell" id="mapShell">
+            <div class="map-toolbar">
+              <button class="map-btn" type="button" id="zoomIn" aria-label="放大">+</button>
+              <button class="map-btn" type="button" id="zoomOut" aria-label="缩小">-</button>
+              <button class="map-btn" type="button" id="resetMap" aria-label="重置">↺</button>
+            </div>
+            <div class="map-hint">拖拽移动 · 双击或按钮缩放</div>
+            <div class="map-viewport">
+              <div class="map-canvas" id="mapCanvas">
+                <div class="map-terrain" aria-hidden="true">
+                  <span class="terrain-blob one"></span>
+                  <span class="terrain-blob two"></span>
+                  <span class="terrain-blob three"></span>
+                  <span class="terrain-blob four"></span>
+                  <span class="terrain-blob five"></span>
+                  <span class="terrain-river"></span>
+                </div>
+                <svg viewBox="0 0 1000 680" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="riverPath" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#9ad8ff"/>
+                      <stop offset="50%" stop-color="#4fb6ff"/>
+                      <stop offset="100%" stop-color="#0071e3"/>
+                    </linearGradient>
+                    <linearGradient id="greenPath" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stop-color="#93f0cb"/>
+                      <stop offset="100%" stop-color="#42b983"/>
+                    </linearGradient>
+                    <linearGradient id="returnPath" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stop-color="#c8b8ff"/>
+                      <stop offset="100%" stop-color="#8266ff"/>
+                    </linearGradient>
+                    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+                      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#6aaedf" flood-opacity="0.18"/>
+                    </filter>
+                  </defs>
+                  <rect width="1000" height="680" fill="transparent"/>
+                  <path d="M56 164C100 132 142 120 184 132C220 142 232 178 276 178C314 178 338 148 380 148C434 148 454 198 500 198C552 198 588 144 652 146C720 148 760 220 832 220C872 220 904 202 944 178" stroke="rgba(107, 182, 151, 0.22)" stroke-width="34" stroke-linecap="round" fill="none"/>
+                  <path d="M94 468C134 438 182 432 232 446C292 462 320 514 378 514C438 514 480 448 544 448C612 448 646 520 708 520C774 520 818 464 882 448" stroke="rgba(107, 182, 151, 0.18)" stroke-width="32" stroke-linecap="round" fill="none"/>
+                  <path class="route-line route-day2" d="M100 140C173 150 228 192 288 214C355 240 435 210 503 198C573 185 646 210 706 256C767 302 820 340 896 360" stroke="url(#riverPath)" stroke-width="18" stroke-linecap="round" fill="none" filter="url(#softShadow)"/>
+                  <path class="route-line route-day3" d="M892 386C864 438 835 492 791 540" stroke="url(#greenPath)" stroke-width="12" stroke-linecap="round" stroke-dasharray="18 16" fill="none"/>
+                  <path class="route-line route-day4" d="M836 404C782 470 720 538 630 566C576 582 520 584 458 566" stroke="url(#returnPath)" stroke-width="12" stroke-linecap="round" stroke-dasharray="24 18" fill="none"/>
+                  <path class="route-line route-day1" d="M68 114C86 96 106 90 130 98C150 104 164 124 178 136" stroke="#ff9b54" stroke-width="10" stroke-linecap="round" fill="none" stroke-dasharray="8 10"/>
+                  <circle cx="100" cy="140" r="18" fill="#ff9b54"/>
+                  <circle cx="286" cy="214" r="16" fill="#ffb86a"/>
+                  <circle cx="504" cy="198" r="17" fill="#4fb6ff"/>
+                  <circle cx="894" cy="360" r="21" fill="#0071e3"/>
+                  <circle cx="790" cy="540" r="17" fill="#42b983"/>
+                  <circle cx="458" cy="566" r="17" fill="#8266ff"/>
+                  <circle cx="100" cy="140" r="33" fill="rgba(255,155,84,0.12)"/>
+                  <circle cx="286" cy="214" r="30" fill="rgba(255,184,106,0.12)"/>
+                  <circle cx="504" cy="198" r="30" fill="rgba(79,182,255,0.12)"/>
+                  <circle cx="894" cy="360" r="36" fill="rgba(0,113,227,0.12)"/>
+                  <circle cx="790" cy="540" r="30" fill="rgba(66,185,131,0.12)"/>
+                  <circle cx="458" cy="566" r="30" fill="rgba(130,102,255,0.12)"/>
+                  <path d="M0 642C86 600 154 586 226 598C316 612 344 662 428 662C521 662 575 604 664 596C766 588 832 640 916 648C953 651 978 648 1000 640V680H0V642Z" fill="rgba(137, 190, 232, 0.14)"/>
+                </svg>
+
+                <article class="map-region region-guilin city is-active" data-spot="guilin">
+                  <strong>桂林市区</strong>
+                </article>
+
+                <article class="map-region region-mopan city" data-spot="mopan">
+                  <strong>磨盘山</strong>
+                </article>
+
+                <article class="map-region region-lijiang river" data-spot="lijiang">
+                  <strong>漓江</strong>
+                </article>
+
+                <article class="map-region region-yangshuo river" data-spot="yangshuo">
+                  <strong>阳朔县城</strong>
+                </article>
+
+                <article class="map-region region-yulong green" data-spot="yulong">
+                  <strong>遇龙河</strong>
+                </article>
+
+                <article class="map-region region-xingping return" data-spot="xingping">
+                  <strong>兴坪</strong>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="map-side">
+          <h3>分区</h3>
+          <div class="legend-list">
+            <div class="legend-item">
+              <span class="legend-dot city"></span>
+              <div>
+                <strong>桂林市区</strong>
+                <p>东西巷、逍遥楼、象鼻山、两江四湖集中在这一片，适合第一天傍晚和夜间。</p>
+              </div>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot river"></span>
+              <div>
+                <strong>漓江段</strong>
+                <p>从磨盘山顺流去阳朔，九马画山、黄布倒影、兴坪佳境都在这条线上。</p>
+              </div>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot green"></span>
+              <div>
+                <strong>遇龙河段</strong>
+                <p>竹筏、十里画廊骑行和工农桥日落集中在这里，是 Day 3 的主场。</p>
+              </div>
+            </div>
+            <div class="legend-item">
+              <span class="legend-dot return"></span>
+              <div>
+                <strong>兴坪 / 收尾</strong>
+                <p>最后一天可以走 20 元背景经典线，也可以改去富里桥、遇龙桥等更安静的点位。</p>
+              </div>
+            </div>
+          </div>
+          <div class="map-detail" id="mapDetail">
+            <h4>桂林市区</h4>
+            <p>第一天从老城开场。东西巷、逍遥楼、象鼻山和两江四湖都适合安排在傍晚到夜间这一段。</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="days">
+      <div class="section-head">
+        <div>
+          <h2>逐日行程</h2>
+          <p>每一天都按“舒服优先”重排过。没有必要为了打卡，把最热的时候浪费在无遮挡暴晒路线上。</p>
+        </div>
+      </div>
+
+      <div class="timeline-wrap">
+        <article class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <div class="day-badge"><b>1</b> GUILIN CITY</div>
+              <h3>Day 1 · 桂林市区开场</h3>
+              <p>10:30 出门，重点是城市地标和老城夜景。</p>
+            </div>
+            <span class="timeline-tag">住桂林市区</span>
+          </div>
+          <div class="timeline">
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">10:30 - 12:30</span>
+                <h4>桂林米粉 + 东西巷 + 逍遥楼</h4>
+              </div>
+              <p>先用一碗正宗米粉开启旅程，再到古街慢慢热身，避免第一天一上来就赶景点。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">12:30 - 16:00</span>
+                <h4>酒店午休 / 商场避暑</h4>
+              </div>
+              <p>这一段建议果断休息，把体力和心情留给傍晚更值得看的时间。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">16:00 - 18:30</span>
+                <h4>象鼻山景区</h4>
+              </div>
+              <p>城市名片放在柔和时段打卡，拍照、走路和体感都会舒服很多。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">19:00 - 21:30</span>
+                <h4>正阳步行街晚餐 + 两江四湖夜景</h4>
+              </div>
+              <p>第一天的收尾用桂林夜景来完成，不累，但记忆点很完整。</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <div class="day-badge"><b>2</b> LI RIVER</div>
+              <h3>Day 2 · 漓江顺流去阳朔</h3>
+              <p>10:30 出门，把最美的一段交通变成一整下午的山水观景。</p>
+            </div>
+            <span class="timeline-tag">住阳朔县城</span>
+          </div>
+          <div class="timeline">
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">10:30 - 13:00</span>
+                <h4>退房 + 早午饭 + 前往磨盘山</h4>
+              </div>
+              <p>今天重点不是快，而是稳。给检票、打车和行李切换留出余量会更省心。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">13:30 - 17:30</span>
+                <h4>漓江三星游船</h4>
+              </div>
+              <p>九马画山、黄布倒影、兴坪佳境会一段段自己出现，这是最省体力的大景观日。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">18:00 - 21:30</span>
+                <h4>入住阳朔 + 西街闲逛</h4>
+              </div>
+              <p>晚上不用排太满，主街逛逛、找地道馆子吃饭，就足够有阳朔的第一晚氛围。</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <div class="day-badge"><b>3</b> YULONG</div>
+              <h3>Day 3 · 遇龙河高潮日</h3>
+              <p>唯一早起的一天。清晨给竹筏，正午给银子岩，傍晚给十里画廊。</p>
+            </div>
+            <span class="timeline-tag">9:00 唯一早出门</span>
+          </div>
+          <div class="timeline">
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">09:00 - 11:30</span>
+                <h4>遇龙河竹筏</h4>
+              </div>
+              <p>推荐金龙桥 - 旧县段。早一点出发是为了避团、避晒，也为了追更完整的倒影。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">11:30 - 13:00</span>
+                <h4>旧县村午饭</h4>
+              </div>
+              <p>终点附近直接吃，省去额外折返。农家菜会比主街更顺手。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">13:00 - 14:30</span>
+                <h4>银子岩景区</h4>
+              </div>
+              <p>最热的时段躲进恒温溶洞，能明显提升整天的舒适度和续航能力。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">15:00 - 16:30</span>
+                <h4>回酒店午休</h4>
+              </div>
+              <p>这段休息别省，晚上骑行和拍日落会因为这次恢复变得轻松很多。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">16:30 - 19:30</span>
+                <h4>十里画廊电动车骑行</h4>
+              </div>
+              <p>沿大榕树、月亮山、工农桥一路骑过去，日落前后的田园山水会很漂亮。</p>
+            </section>
+          </div>
+        </article>
+
+        <article class="timeline-card">
+          <div class="timeline-head">
+            <div>
+              <div class="day-badge"><b>4</b> FINALE</div>
+              <h3>Day 4 · 轻松收尾返程</h3>
+              <p>10:30 出门，根据返程时间在经典兴坪和小众古桥之间二选一。</p>
+            </div>
+            <span class="timeline-tag">弹性收官</span>
+          </div>
+          <div class="timeline">
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">10:30 - 12:30</span>
+                <h4>兴坪古镇 / 富里桥、遇龙桥</h4>
+              </div>
+              <p>喜欢经典就去兴坪看 20 元背景，喜欢安静就去古桥拍更松弛的田园氛围。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">12:30 - 13:30</span>
+                <h4>最后一顿本地菜</h4>
+              </div>
+              <p>吃饱再回酒店拿行李，节奏会更稳，也能给这趟旅程一个完整尾声。</p>
+            </section>
+            <section class="slot">
+              <div class="slot-top">
+                <span class="time">下午</span>
+                <h4>返程交通</h4>
+              </div>
+              <p>阳朔站通常更直接；如果去桂林两江机场，建议至少多预留 2.5 小时以上换乘时间。</p>
+            </section>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="plan-b">
+      <div class="section-head">
+        <div>
+          <h2>三天备选</h2>
+          <p>如果时间只能压缩到 3 天，建议保留漓江和遇龙河两大核心，把桂林市区与收尾段做合并。</p>
+        </div>
+      </div>
+      <div class="plan-mini">
+        <article class="card">
+          <h3>Day 1</h3>
+          <p>上午或中午到桂林后，先看东西巷和象鼻山，晚上直接住桂林市区，把第一天压缩成城市速览。</p>
+        </article>
+        <article class="card">
+          <h3>Day 2</h3>
+          <p>中午乘漓江三星游船顺流到阳朔，晚上西街闲逛，把最完整的大面山水保留下来。</p>
+        </article>
+        <article class="card">
+          <h3>Day 3</h3>
+          <p>上午遇龙河，正午银子岩，傍晚十里画廊；如果返程晚，可顺带补一个兴坪或工农桥落日。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="food">
+      <div class="section-head">
+        <div>
+          <h2>美食信息</h2>
+          <p>桂林和阳朔适合慢慢吃。不同区域各有更顺路、更舒服的吃法，按行程安排会省力很多。</p>
+        </div>
+      </div>
+
+      <div class="grid-food">
+        <article class="food-card food-hero">
+          <h3>桂林与阳朔，适合吃什么</h3>
+          <p>
+            桂林这趟最适合的吃法，其实不是“冲最网红”，而是按区域和时段去吃。
+            桂林市区适合米粉和本地家常菜，阳朔更适合把啤酒鱼、农家菜和夜间小吃放在一起体验。
+          </p>
+          <div class="food-stack">
+            <span class="food-chip">桂林米粉：适合 Day 1 开场</span>
+            <span class="food-chip">啤酒鱼：适合阳朔晚餐主菜</span>
+            <span class="food-chip">田螺酿：适合搭配本地家常菜</span>
+            <span class="food-chip">荔浦芋扣肉：适合正餐点一道分享</span>
+          </div>
+        </article>
+
+        <div class="food-grid">
+          <article class="food-card">
+            <h3>桂林市区怎么吃</h3>
+            <ul class="food-list">
+              <li>Day 1 早午饭优先桂林米粉，先拌粉后喝汤更接近本地吃法。</li>
+              <li>象鼻山结束后，去正阳步行街附近吃本地菜最顺路。</li>
+              <li>晚餐可以围绕啤酒鱼、田螺酿、荔浦芋扣肉、炒时蔬来点。</li>
+            </ul>
+            <small>适合 Day 1</small>
+          </article>
+
+          <article class="food-card">
+            <h3>阳朔县城怎么吃</h3>
+            <ul class="food-list">
+              <li>西街主街氛围强，但价格往往偏高，想吃得稳可以多进两条小巷。</li>
+              <li>Day 2 晚餐适合轻松吃，留一点时间给逛街和夜景。</li>
+              <li>Day 3 晚上如果看完骑行回来，啤酒鱼和农家小炒会很适合收尾。</li>
+            </ul>
+            <small>适合 Day 2 - Day 3</small>
+          </article>
+
+          <article class="food-card">
+            <h3>遇龙河当天午饭</h3>
+            <ul class="food-list">
+              <li>旧县村附近吃最省事，农家菜比回县城再找更高效。</li>
+              <li>推荐点土鸡煲、啤酒鱼、清炒时蔬这种恢复体力又不太重口的组合。</li>
+            </ul>
+            <small>适合 Day 3 中午</small>
+          </article>
+
+          <article class="food-card">
+            <h3>最后一餐建议</h3>
+            <ul class="food-list">
+              <li>Day 4 别把饭拖到返程路上，提前吃好再去车站或机场体验会好很多。</li>
+              <li>如果前面还没吃够桂林家常菜，最后一顿可以补一次荔浦芋、酿菜或小炒。</li>
+            </ul>
+            <small>适合 Day 4</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tools">
+      <div class="section-head">
+        <div>
+          <h2>实用信息</h2>
+          <p>出发前把预约、住宿、防晒和避坑这些细节处理好，整趟旅程会顺很多。</p>
+        </div>
+      </div>
+
+      <div class="grid-tools">
+        <article class="tool-card">
+          <h3>预约节点</h3>
+          <div class="tool-list">
+            <div class="tool-item">
+              <strong>象鼻山</strong>
+              <p>免费但需预约，建议至少提前一天实名操作。</p>
+            </div>
+            <div class="tool-item">
+              <strong>漓江三星游船</strong>
+              <p>建议提前 3 - 5 天购票，暑期下午班更容易紧张。</p>
+            </div>
+            <div class="tool-item">
+              <strong>遇龙河竹筏</strong>
+              <p>前一晚 20:00 是重要时点，热门河段和好时段容易秒空。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tool-card">
+          <h3>打包与避坑</h3>
+          <ul class="check-list">
+            <li>防晒衣、帽子、墨镜和高倍防晒霜是刚需，尤其江面紫外线更强。</li>
+            <li>晴雨两用伞和速干衣裤很实用，7 月底午后雷阵雨并不少见。</li>
+            <li>防滑鞋、手机防水袋、驱蚊水建议带上，遇龙河当天会很有用。</li>
+            <li>漓江游船和竹筏尽量只走官方渠道，不碰路边低价票和临时团。</li>
+            <li>西街主街美食和特产普遍溢价偏高，真正想吃得更舒服建议往边上小巷走。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const shell = document.getElementById("mapShell");
+      const canvas = document.getElementById("mapCanvas");
+      const zoomInBtn = document.getElementById("zoomIn");
+      const zoomOutBtn = document.getElementById("zoomOut");
+      const resetBtn = document.getElementById("resetMap");
+      const routeToggle = document.getElementById("routeToggle");
+      const routeButtons = routeToggle ? Array.from(routeToggle.querySelectorAll(".toggle-btn")) : [];
+      const routeLines = Array.from(document.querySelectorAll(".route-line"));
+      const mapRegions = Array.from(document.querySelectorAll(".map-region"));
+      const mapDetail = document.getElementById("mapDetail");
+
+      if (!shell || !canvas || !zoomInBtn || !zoomOutBtn || !resetBtn) {
+        return;
+      }
+
+      const spotCopy = {
+        guilin: {
+          title: "桂林市区",
+          body: "第一天从老城开场。东西巷、逍遥楼、象鼻山和两江四湖都适合安排在傍晚到夜间这一段。"
+        },
+        mopan: {
+          title: "磨盘山码头",
+          body: "第二天的登船点。从这里上船后，位移本身就会变成漓江最重要的一段观景体验。"
+        },
+        lijiang: {
+          title: "漓江精华段",
+          body: "九马画山、黄布倒影和兴坪佳境都在这条主线上依次展开，是整趟路线的大画幅时刻。"
+        },
+        yangshuo: {
+          title: "阳朔县城",
+          body: "游船抵达后的住宿和晚间活动核心。西街、夜宵和第二天的交通调度几乎都围绕这里展开。"
+        },
+        yulong: {
+          title: "遇龙河",
+          body: "第三天的高潮区域。竹筏、十里画廊骑行和工农桥落日都集中在这里，适合慢下来玩。"
+        },
+        xingping: {
+          title: "兴坪 / 收尾",
+          body: "最后一天可选经典 20 元背景，也可以把这一段替换成更安静的富里桥、遇龙桥路线。"
+        }
+      };
+
+      function setMapDetail(spotKey) {
+        if (!mapDetail || !spotCopy[spotKey]) {
+          return;
+        }
+        const title = mapDetail.querySelector("h4");
+        const body = mapDetail.querySelector("p");
+        if (title) {
+          title.textContent = spotCopy[spotKey].title;
+        }
+        if (body) {
+          body.textContent = spotCopy[spotKey].body;
+        }
+      }
+
+      function setActiveSpot(spotKey) {
+        mapRegions.forEach((region) => {
+          region.classList.toggle("is-active", region.dataset.spot === spotKey);
+        });
+        setMapDetail(spotKey);
+      }
+
+      function setActiveRoute(routeKey) {
+        routeButtons.forEach((button) => {
+          button.classList.toggle("is-active", button.dataset.route === routeKey);
+        });
+
+        routeLines.forEach((line) => {
+          const classes = line.className.baseVal || "";
+          line.classList.remove("is-active", "secondary-active", "is-dimmed");
+
+          if (routeKey === "all") {
+            return;
+          }
+
+          if (classes.includes(`route-${routeKey}`)) {
+            line.classList.add("is-active");
+            return;
+          }
+
+          if (
+            (routeKey === "day2" && classes.includes("route-day3")) ||
+            (routeKey === "day3" && classes.includes("route-day2")) ||
+            (routeKey === "day4" && classes.includes("route-day2"))
+          ) {
+            line.classList.add("secondary-active");
+            return;
+          }
+
+          line.classList.add("is-dimmed");
+        });
+      }
+
+      const state = {
+        scale: 1,
+        minScale: 0.85,
+        maxScale: 2.4,
+        x: 0,
+        y: 0,
+        dragging: false,
+        startX: 0,
+        startY: 0,
+        pointerId: null
+      };
+
+      function clamp(value, min, max) {
+        return Math.min(max, Math.max(min, value));
+      }
+
+      function getBounds(nextScale) {
+        const width = shell.clientWidth;
+        const height = shell.clientHeight;
+        const extraX = ((nextScale - 1) * width) / 2;
+        const extraY = ((nextScale - 1) * height) / 2;
+
+        return {
+          minX: -extraX - 40,
+          maxX: extraX + 40,
+          minY: -extraY - 40,
+          maxY: extraY + 40
+        };
+      }
+
+      function applyTransform(withTransition = true) {
+        const bounds = getBounds(state.scale);
+        state.x = clamp(state.x, bounds.minX, bounds.maxX);
+        state.y = clamp(state.y, bounds.minY, bounds.maxY);
+
+        canvas.classList.toggle("no-transition", !withTransition);
+        canvas.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.scale})`;
+      }
+
+      function zoom(delta, withTransition = true) {
+        const nextScale = clamp(state.scale + delta, state.minScale, state.maxScale);
+        if (nextScale === state.scale) {
+          return;
+        }
+        state.scale = nextScale;
+        applyTransform(withTransition);
+      }
+
+      function resetMap() {
+        state.scale = window.innerWidth < 640 ? 0.92 : 1;
+        state.x = 0;
+        state.y = 0;
+        applyTransform(true);
+      }
+
+      function startDrag(clientX, clientY, pointerId) {
+        state.dragging = true;
+        state.pointerId = pointerId;
+        state.startX = clientX - state.x;
+        state.startY = clientY - state.y;
+        shell.classList.add("is-dragging");
+        canvas.classList.add("no-transition");
+      }
+
+      function moveDrag(clientX, clientY) {
+        if (!state.dragging) {
+          return;
+        }
+        state.x = clientX - state.startX;
+        state.y = clientY - state.startY;
+        applyTransform(false);
+      }
+
+      function endDrag() {
+        state.dragging = false;
+        state.pointerId = null;
+        shell.classList.remove("is-dragging");
+        canvas.classList.remove("no-transition");
+        applyTransform(true);
+      }
+
+      shell.addEventListener("pointerdown", (event) => {
+        if (event.target.closest(".map-btn")) {
+          return;
+        }
+        startDrag(event.clientX, event.clientY, event.pointerId);
+        shell.setPointerCapture(event.pointerId);
+      });
+
+      shell.addEventListener("pointermove", (event) => {
+        if (state.pointerId !== event.pointerId) {
+          return;
+        }
+        moveDrag(event.clientX, event.clientY);
+      });
+
+      shell.addEventListener("pointerup", (event) => {
+        if (state.pointerId !== event.pointerId) {
+          return;
+        }
+        endDrag();
+      });
+
+      shell.addEventListener("pointercancel", endDrag);
+      shell.addEventListener("lostpointercapture", endDrag);
+
+      shell.addEventListener("dblclick", (event) => {
+        if (event.target.closest(".map-btn")) {
+          return;
+        }
+        zoom(0.18, true);
+      });
+
+      shell.addEventListener("wheel", (event) => {
+        event.preventDefault();
+        zoom(event.deltaY < 0 ? 0.12 : -0.12, true);
+      }, { passive: false });
+
+      zoomInBtn.addEventListener("click", () => zoom(0.18, true));
+      zoomOutBtn.addEventListener("click", () => zoom(-0.18, true));
+      resetBtn.addEventListener("click", resetMap);
+
+      routeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          setActiveRoute(button.dataset.route || "all");
+        });
+      });
+
+      mapRegions.forEach((region) => {
+        region.addEventListener("click", () => {
+          setActiveSpot(region.dataset.spot || "guilin");
+        });
+      });
+
+      window.addEventListener("resize", resetMap);
+      setActiveRoute("all");
+      setActiveSpot("guilin");
+      resetMap();
+    }());
+  </script>
+</body>
+</html>
